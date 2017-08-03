@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="5053" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MixerHostViewController">
+            <connections>
+                <outlet property="inputLevelDisplayLeft" destination="147" id="151"/>
+                <outlet property="inputLevelDisplayRight" destination="150" id="152"/>
+                <outlet property="micFreqDisplay" destination="84" id="85"/>
+                <outlet property="micFxFader" destination="60" id="62"/>
+                <outlet property="micFxSelector" destination="112" id="144"/>
+                <outlet property="micFxSwitch" destination="77" id="81"/>
+                <outlet property="mixerBus0LevelFader" destination="23" id="44"/>
+                <outlet property="mixerBus0Switch" destination="25" id="45"/>
+                <outlet property="mixerBus1LevelFader" destination="27" id="46"/>
+                <outlet property="mixerBus2LevelFader" destination="53" id="59"/>
+                <outlet property="mixerBus2Switch" destination="54" id="58"/>
+                <outlet property="mixerBus3LevelFader" destination="70" id="130"/>
+                <outlet property="mixerBus3Switch" destination="71" id="76"/>
+                <outlet property="mixerBus4LevelFader" destination="94" id="146"/>
+                <outlet property="mixerBus4Switch" destination="95" id="104"/>
+                <outlet property="mixerBus5FxSwitch" destination="109" id="127"/>
+                <outlet property="mixerBus5LevelFader" destination="97" id="108"/>
+                <outlet property="mixerBus5Switch" destination="98" id="105"/>
+                <outlet property="mixerFxSwitch" destination="89" id="92"/>
+                <outlet property="mixerOutputLevelFader" destination="24" id="49"/>
+                <outlet property="numberOfInputChannelsDisplay" destination="87" id="148"/>
+                <outlet property="playButton" destination="18" id="31"/>
+                <outlet property="samplerPlayButton" destination="135" id="138"/>
+                <outlet property="synthPlayButton" destination="139" id="142"/>
+                <outlet property="view" destination="14" id="51"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="14">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" id="17">
+                    <rect key="frame" x="0.0" y="980" width="768" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <items>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="20"/>
+                        <barButtonItem title="Play" width="240" style="plain" id="18">
+                            <connections>
+                                <action selector="playOrStop:" destination="-1" id="32"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="19"/>
+                    </items>
+                </toolbar>
+                <slider opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="9.9999997473787516e-06" maxValue="1" id="23">
+                    <rect key="frame" x="111" y="450" width="524" height="29"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <connections>
+                        <action selector="mixerInputGainChanged:" destination="-1" eventType="valueChanged" id="42"/>
+                    </connections>
+                </slider>
+                <slider opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="24">
+                    <rect key="frame" x="110" y="856" width="525" height="29"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <connections>
+                        <action selector="mixerOutputGainChanged:" destination="-1" eventType="valueChanged" id="41"/>
+                    </connections>
+                </slider>
+                <switch opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="25">
+                    <rect key="frame" x="20" y="450" width="51" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <connections>
+                        <action selector="enableMixerInput:" destination="-1" eventType="valueChanged" id="33"/>
+                    </connections>
+                </switch>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="guitar loop" lineBreakMode="tailTruncation" minimumFontSize="10" adjustsFontSizeToFit="NO" id="26">
+                    <rect key="frame" x="112" y="478" width="99" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="main" lineBreakMode="tailTruncation" minimumFontSize="10" adjustsFontSizeToFit="NO" id="30">
+                    <rect key="frame" x="112" y="886" width="107" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <slider opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="9.9999997473787516e-06" maxValue="1" id="27">
+                    <rect key="frame" x="110" y="507" width="525" height="29"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <connections>
+                        <action selector="mixerInputGainChanged:" destination="-1" eventType="valueChanged" id="43"/>
+                    </connections>
+                </slider>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="drum loop" lineBreakMode="tailTruncation" minimumFontSize="10" adjustsFontSizeToFit="NO" id="29">
+                    <rect key="frame" x="112" y="537" width="113" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <slider opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="9.9999997473787516e-06" maxValue="1" id="53">
+                    <rect key="frame" x="111" y="90" width="524" height="29"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <connections>
+                        <action selector="mixerInputGainChanged:" destination="-1" eventType="valueChanged" id="57"/>
+                    </connections>
+                </slider>
+                <switch opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="54">
+                    <rect key="frame" x="20" y="90" width="51" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <connections>
+                        <action selector="enableMixerInput:" destination="-1" eventType="valueChanged" id="56"/>
+                    </connections>
+                </switch>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="mic/line" lineBreakMode="tailTruncation" minimumFontSize="10" adjustsFontSizeToFit="NO" id="55">
+                    <rect key="frame" x="113" y="120" width="65" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <slider opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="9.9999997473787516e-06" maxValue="1" id="70">
+                    <rect key="frame" x="110" y="584" width="525" height="29"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <connections>
+                        <action selector="mixerInputGainChanged:" destination="-1" eventType="valueChanged" id="74"/>
+                    </connections>
+                </slider>
+                <switch opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="71">
+                    <rect key="frame" x="20" y="581" width="51" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <connections>
+                        <action selector="enableMixerInput:" destination="-1" eventType="valueChanged" id="73"/>
+                    </connections>
+                </switch>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="synth" lineBreakMode="tailTruncation" minimumFontSize="10" adjustsFontSizeToFit="NO" id="72">
+                    <rect key="frame" x="112" y="614" width="47" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <slider opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="9.9999997473787516e-06" maxValue="1" id="94">
+                    <rect key="frame" x="110" y="662" width="525" height="29"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <connections>
+                        <action selector="mixerInputGainChanged:" destination="-1" eventType="valueChanged" id="101"/>
+                    </connections>
+                </slider>
+                <switch opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="95">
+                    <rect key="frame" x="20" y="659" width="51" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <connections>
+                        <action selector="enableMixerInput:" destination="-1" eventType="valueChanged" id="100"/>
+                    </connections>
+                </switch>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="sampler" lineBreakMode="tailTruncation" minimumFontSize="10" adjustsFontSizeToFit="NO" id="96">
+                    <rect key="frame" x="112" y="692" width="92" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="play" lineBreakMode="tailTruncation" minimumFontSize="10" adjustsFontSizeToFit="NO" id="118">
+                    <rect key="frame" x="691" y="657" width="40" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="play" lineBreakMode="tailTruncation" minimumFontSize="10" adjustsFontSizeToFit="NO" id="119">
+                    <rect key="frame" x="691" y="581" width="40" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="frequency" lineBreakMode="tailTruncation" minimumFontSize="10" adjustsFontSizeToFit="NO" id="120">
+                    <rect key="frame" x="113" y="195" width="93" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="channels" lineBreakMode="tailTruncation" minimumFontSize="10" adjustsFontSizeToFit="NO" id="153">
+                    <rect key="frame" x="113" y="155" width="71" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="fx control" lineBreakMode="tailTruncation" minimumFontSize="10" adjustsFontSizeToFit="NO" id="116">
+                    <rect key="frame" x="115" y="352" width="92" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="fx selection" lineBreakMode="tailTruncation" minimumFontSize="10" adjustsFontSizeToFit="NO" id="165">
+                    <rect key="frame" x="115" y="293" width="92" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <slider opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="9.9999997473787516e-06" maxValue="1" id="97">
+                    <rect key="frame" x="110" y="740" width="525" height="29"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <connections>
+                        <action selector="mixerInputGainChanged:" destination="-1" eventType="valueChanged" id="103"/>
+                    </connections>
+                </slider>
+                <switch opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="98">
+                    <rect key="frame" x="20" y="738" width="51" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <connections>
+                        <action selector="enableMixerInput:" destination="-1" eventType="valueChanged" id="102"/>
+                    </connections>
+                </switch>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="filePlayer" lineBreakMode="tailTruncation" minimumFontSize="10" id="99">
+                    <rect key="frame" x="112" y="770" width="92" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="60">
+                    <rect key="frame" x="111" y="322" width="524" height="29"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <connections>
+                        <action selector="micFxFaderChanged:" destination="-1" eventType="valueChanged" id="61"/>
+                    </connections>
+                </slider>
+                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="77">
+                    <rect key="frame" x="20" y="250" width="51" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <connections>
+                        <action selector="enableMicFx:" destination="-1" eventType="valueChanged" id="82"/>
+                    </connections>
+                </switch>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" minimumFontSize="12" adjustsFontSizeToFit="NO" id="84">
+                    <rect key="frame" x="199" y="199" width="81" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" minimumFontSize="10" adjustsFontSizeToFit="NO" id="87">
+                    <rect key="frame" x="199" y="157" width="26" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="89">
+                    <rect key="frame" x="666" y="853" width="51" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <connections>
+                        <action selector="enableMixerFx:" destination="-1" eventType="valueChanged" id="93"/>
+                    </connections>
+                </switch>
+                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="109">
+                    <rect key="frame" x="666" y="735" width="51" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <connections>
+                        <action selector="enableMixerBus5Fx:" destination="-1" eventType="valueChanged" id="126"/>
+                    </connections>
+                </switch>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" id="112">
+                    <rect key="frame" x="112" y="242" width="521" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <segments>
+                        <segment title="ring"/>
+                        <segment title="fft"/>
+                        <segment title="pitch"/>
+                        <segment title="echo"/>
+                        <segment title="lpf"/>
+                        <segment title="conv"/>
+                    </segments>
+                    <connections>
+                        <action selector="micFxSelectorChanged:" destination="-1" eventType="valueChanged" id="143"/>
+                    </connections>
+                </segmentedControl>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="channel fx" lineBreakMode="tailTruncation" minimumFontSize="10" adjustsFontSizeToFit="NO" id="114">
+                    <rect key="frame" x="666" y="765" width="90" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="input fx" lineBreakMode="tailTruncation" minimumFontSize="10" adjustsFontSizeToFit="NO" id="164">
+                    <rect key="frame" x="28" y="293" width="62" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="main fx" lineBreakMode="tailTruncation" minimumFontSize="10" id="117">
+                    <rect key="frame" x="666" y="888" width="90" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="135">
+                    <rect key="frame" x="683" y="650" width="46" height="35"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <connections>
+                        <action selector="samplerPlayButtonPressed:" destination="-1" eventType="touchDown" id="136"/>
+                        <action selector="samplerPlayButtonReleased:" destination="-1" eventType="touchUpInside" id="137"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="139">
+                    <rect key="frame" x="683" y="574" width="48" height="35"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="synthPlayButtonPressed:" destination="-1" eventType="touchDown" id="140"/>
+                        <action selector="synthPlayButtonReleased:" destination="-1" eventType="touchUpInside" id="141"/>
+                    </connections>
+                </button>
+                <progressView opaque="NO" contentMode="scaleToFill" progress="0.5" id="147">
+                    <rect key="frame" x="237" y="157" width="396" height="2"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </progressView>
+                <progressView opaque="NO" contentMode="scaleToFill" progress="0.5" id="150">
+                    <rect key="frame" x="237" y="172" width="396" height="2"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </progressView>
+                <navigationBar contentMode="scaleToFill" barStyle="black" id="155">
+                    <rect key="frame" x="-1" y="0.0" width="768" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <items>
+                        <navigationItem title="audioGraph1.1" id="157"/>
+                    </items>
+                </navigationBar>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="press Play to begin" lineBreakMode="tailTruncation" minimumFontSize="10" adjustsFontSizeToFit="NO" id="166">
+                    <rect key="frame" x="317" y="927" width="175" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+        </view>
+    </objects>
+</document>
